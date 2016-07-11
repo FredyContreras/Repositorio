@@ -124,7 +124,7 @@ $randomUser = DB::table('users')
                 ->inRandomOrder()
                 ->first();
 
-//select *from users where account_id > 100 group by account_id;
+//select *from users having sum(account_id) > 100 group by account_id;
 $users = DB::table('users')
                 ->groupBy('account_id')
                 ->having('account_id', '>', 100)
